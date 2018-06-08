@@ -144,6 +144,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.use_buffer_age=false \
     ro.sf.lcd_density=420 \
     ro.opengles.version=196610 \
     debug.sf.hw=1 \
