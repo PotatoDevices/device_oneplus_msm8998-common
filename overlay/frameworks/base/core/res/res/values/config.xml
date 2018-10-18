@@ -1011,4 +1011,7 @@
 
     <!-- Enable all rotations -->
     <bool name="config_allowAllRotations">true</bool>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
 </resources>
