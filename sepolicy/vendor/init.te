@@ -5,3 +5,5 @@ allow init sysfs_data:file { r_file_perms };
 
 allow init hal_power_hwservice:hwservice_manager add;
 allow init hidl_base_hwservice:hwservice_manager add;
+
+allow init hal_wifi_hostapd_default:process { noatsecure };
