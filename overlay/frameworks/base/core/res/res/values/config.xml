@@ -608,4 +608,7 @@
 
     <!-- Whether to enable OP5/5T OP cam hack -->
     <bool name="config_hasOnePlusCamera">true</bool>
+
+    <!-- Enable video pause workaround when enabling/disabling the camera. -->
+    <bool name="config_useVideoPauseWorkaround">true</bool>
 </resources>
