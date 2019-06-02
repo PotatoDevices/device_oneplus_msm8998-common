@@ -41,5 +41,10 @@
     <integer name="config_maxVisibleNotificationIcons">6</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">7</integer>
 
+    <!-- Always On Display -->
+    <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+    <bool name="config_displayBlanksAfterDoze">true</bool>
+    <bool name="config_displayBrightnessBucketsInDoze">true</bool>
+
 </resources>
 
