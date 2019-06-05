@@ -12,9 +12,13 @@ allow system_server sysfs_bluetooth_writable:file { rw_file_perms };
 allow system_server cameraserver:fifo_file { rw_file_perms };
 get_prop(system_server, vendor_camera_prop)
 
+allow system_server vendor_data_file:dir search;
+allow system_server vendor_data_file:file { read open getattr };
+
 # Misc
 allow system_server proc_touchpanel:dir { r_dir_perms };
 allow system_server proc_touchpanel:file { rw_file_perms };
+allow system_server sysfs_batteryinfo:file { r_file_perms };
 allow system_server sysfs_fpc_key:file { rw_file_perms };
 allow system_server vendor_keylayout_file:file { r_file_perms };
 allow system_server default_prop:property_service set;
@@ -27,6 +31,3 @@ allow system_server sysfs_vibrator:file { r_file_perms };
 
 r_dir_file(system_server, sysfs_usb_supply);
 r_dir_file(system_server, sysfs_battery_supply);
-
-#Smart charger
-allow system_server sysfs_battery_supply:file rw_file_perms;
