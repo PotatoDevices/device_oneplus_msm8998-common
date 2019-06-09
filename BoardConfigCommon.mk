@@ -34,6 +34,9 @@ BOARD_VENDOR := oneplus
 # we are too big to fit in
 PRODUCT_SKIP_FINGERPRINT_FROM_FILE := true
 
+# Use Snapdragon LLVM, if available
+TARGET_USE_SDCLANG := true
+
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
 
@@ -76,9 +79,9 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-TARGET_KERNEL_CONFIG := oneplus5_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := 6.0.2
+TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -234,6 +237,9 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 TARGET_INIT_VENDOR_LIB := libinit_oneplus_msm8998
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus_msm8998
 
+# IPA
+USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
+
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
@@ -325,8 +331,6 @@ WIFI_DRIVER_STATE_ON := 1
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
-USE_DEVICE_SPECIFIC_IPACFG_MGR := true
-DEVICE_SPECIFIC_IPACFG-MGR_PATH := $(PLATFORM_PATH)/data-ipa-cfg-mgr
 
 # inherit from the proprietary version
 -include vendor/oneplus/msm8998-common/BoardConfigVendor.mk
