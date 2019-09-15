@@ -32,7 +32,7 @@ BOARD_VENDOR := oneplus
 PRODUCT_SKIP_FINGERPRINT_FROM_FILE := true
 
 # Use Snapdragon LLVM, if available
-TARGET_USE_SDCLANG := true
+#TARGET_USE_SDCLANG := true
 
 # Compile libhwui in performance mode
 HWUI_COMPILE_FOR_PERF := true
@@ -44,6 +44,10 @@ TARGET_NO_BOOTLOADER := true
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno540
+
+BUILD_BROKEN_DUP_RULES :=true
+BUILD_BROKEN_PHONY_TARGETS := true
+TARGET_USES_HARDWARE_QCOM_GPS := false
 
 # Architecture
 TARGET_ARCH := arm64
@@ -66,7 +70,7 @@ BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x37 ehci-hcd.p
 BOARD_KERNEL_CMDLINE += service_locator.enable=1 swiotlb=2048 androidboot.usbconfigfs=true 
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a800000.dwc3 
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
@@ -97,7 +101,7 @@ AUDIO_FEATURE_ENABLED_COMPRESS_CAPTURE := false
 AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := true
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-AUDIO_FEATURE_ENABLED_EXTN_FLAC_DECODER := true
+AUDIO_FEATURE_ENABLED_EXTN_FLAC_dexDECODER := true
 AUDIO_FEATURE_ENABLED_EXTN_RESAMPLER := false
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 AUDIO_FEATURE_ENABLED_HDMI_SPK := true
@@ -207,16 +211,16 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_DEBUG_INFO := false
-      USE_DEX2OAT_DEBUG := false
-      DONT_DEXPREOPT_PREBUILTS := true
-      WITH_DEXPREOPT_PIC := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-  endif
-endif
+# ifeq ($(HOST_OS),linux)
+#  ifneq ($(TARGET_BUILD_VARIANT),eng)
+#      WITH_DEXPREOPT := true
+#      WITH_DEXPREOPT_DEBUG_INFO := false
+#      USE_DEX2OAT_DEBUG := false
+#      DONT_DEXPREOPT_PREBUILTS := true
+#      WITH_DEXPREOPT_PIC := true
+#      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+#  endif
+#endif
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
@@ -311,7 +315,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_COPY_OUT_VENDOR := vendor
 
-PRODUCT_SHIPPING_API_LEVEL := 25
+# PRODUCT_SHIPPING_API_LEVEL := 25
 
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
