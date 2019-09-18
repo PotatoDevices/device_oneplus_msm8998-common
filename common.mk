@@ -93,7 +93,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@4.0-impl \
     audio.a2dp.default \
-    audio_amplifier.msm8998 \
+    #audio_amplifier.msm8998 \
     audio.primary.msm8998 \
     audio.r_submix.default \
     audio.usb.default \
@@ -180,7 +180,7 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libvulkan \
-    DisplayMode
+    #DisplayMode
 
 PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
@@ -273,8 +273,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # KeyHandler
-PRODUCT_PACKAGES += \
-    KeyHandler
+#PRODUCT_PACKAGES += \
+#    KeyHandler
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -409,8 +409,8 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     telephony-ext
 
-#PRODUCT_BOOT_JARS += \
-#    telephony-ext
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
