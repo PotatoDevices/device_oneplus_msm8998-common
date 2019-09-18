@@ -1,5 +1,5 @@
-﻿on post-fs
-    chown system system /proc/ship_mode
+on post-fs
+    chown system "system /proc/ship_mode"
     chown system system /dev/param
     chown system system /dev/block/mmcblk0p21
     chmod 660 /dev/block/mmcblk0p21
@@ -40,7 +40,7 @@
     chown system system /sys/class/leds/vibrator/duration
     chown system system /sys/class/leds/vibrator/state
 
-    /* create a empty file for wifi hal to write mac address */
+    #/* create a empty file for wifi hal to write mac address */
     write /mnt/vendor/persist/wlan_mac.bin ""
     chown wifi wifi /mnt/vendor/persist/wlan_mac.bin
     mkdir /mnt/vendor/persist/engineermode
