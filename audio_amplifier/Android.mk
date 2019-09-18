@@ -33,10 +33,14 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/techpack/audio/in
 LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/vendor/qcom/opensource/audio-kernel/include
 
+LOCAL_HEADER_LIBRARIES := libhardware_headers
+
 LOCAL_SHARED_LIBRARIES := \
     liblog \
     libutils \
     libcutils \
+    libprocessgroup \
+    libhardware \
     audio.primary.$(TARGET_BOARD_PLATFORM)
 
 LOCAL_SRC_FILES := audio_amplifier.c
