@@ -223,6 +223,17 @@
             <instance>default</instance>
         </interface>
     </hal>
+           <name>IVibrator</name>
+=======
+        <name>android.hardware.vr</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IVr</name>
+>>>>>>> 5e8486e... msm8998-common: Disable vibrator HAL interface
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.ant</name>
         <transport>hwbinder</transport>
