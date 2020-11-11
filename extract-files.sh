@@ -66,8 +66,6 @@ function blob_fixup() {
 # Initialize the helper
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$POTATO_ROOT" true "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
