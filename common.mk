@@ -171,8 +171,8 @@ PRODUCT_COPY_FILES += \
 
 # Device Settings
 PRODUCT_PACKAGES += \
-    KeyHandler \
     DeviceSettings
+    
     
 # Display
 PRODUCT_PACKAGES += \
