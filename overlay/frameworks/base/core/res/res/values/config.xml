@@ -612,14 +612,6 @@
          OLED displays and can cause a bit of discoloration. Reinvestigate after tuning -->
     <bool name="config_defaultCABC">false</bool>
 
-    <!-- BurnIn protection. This should be enabled on devices that have OLED displays -->
-    <bool name="config_enableBurnInProtection">true</bool>
-
-    <!-- Whether to cleanup fingerprints upon connection to the daemon and when
-         user switches -->
-    <bool name="config_cleanupUnusedFingerprints">false</bool>
-
-
     <!-- Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
     <integer name="config_shift_interval">40</integer>
@@ -632,7 +624,7 @@
          1: Right side -->
     <integer name="config_alertSliderLocation">0</integer>
 
-    <!-- Whether key handler sends intent when changing slider position -->
-    <string name="config_alertSliderIntent">com.potato.device.DeviceSettings.UPDATE_SLIDER_POSITION</string> 
+    <!-- Whether key handler sends intent when changing slider position 
+    <string name="config_alertSliderIntent">com.potato.device.DeviceSettings.UPDATE_SLIDER_POSITION</string> -->
 
 </resources>
